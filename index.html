@@ -1,0 +1,106 @@
+<html>
+    <head>
+
+        <title>Brick Breaker</title>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+        <!-- above is the link to use font-awesome CDN -->
+
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <!-- above is the link to the external stylesheet -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- meta tag for adjusting the content according to the device width -->
+
+    </head>
+
+    <body>
+
+        <!-- start button -->
+
+        <button id="start">
+            new game
+        </button>
+
+        <!-- heading -->
+
+        <div id="heading">
+
+            <i class="fas fa-gamepad"></i>
+            <span>Brick Breaker</span>           
+
+        </div>
+
+        <!-- volume control -->
+
+        <div id="volume">
+            <i id="mute" class="fas fa-volume-mute"></i>
+            <i id="unmute" class="fas fa-volume-up"></i>
+        </div>
+
+        <!-- main content -->
+        
+        <div id="main">
+
+            <!-- games won text -->
+
+            <div id="games-won" class="main-games-won">games won</div>
+
+            <!-- canvas where we paint our game -->
+
+            <canvas id="game-canvas"></canvas>
+
+            <!-- games won count -->
+
+            <div id="games-won-count" class="main-games-won">0</div>
+
+        </div>
+
+        <!-- rules and instructions container -->
+
+        <div id="rules-and-instructions-container">
+
+            <!-- rules and instructions heading -->
+
+            <div id="rules-and-instructions-heading">Rules and Instructions</div>
+
+            <!-- rules and instructions content -->
+
+            <ul id="rules-and-instructions-content">
+
+                <li>You can move the paddle left or right using the A and the D keys or the &lt; and the &gt; keys or move the mouse and the paddle will follow the mouse</li>
+                <li>You have three lives and you need to break all the bricks with these lives to win the game or its game over</li>     
+                <li>You can enable or disable the sound, start a new game or end the current game as you wish</li>           
+
+            </ul>
+
+        </div>
+
+        <!-- game over message to show when the game is over -->
+
+        <div id="game-over" class="game-over-win">
+
+            <span>game over</span>
+            <i class="fas fa-frown"></i>
+
+        </div>
+
+        <!-- game won message to show when the user wins the game -->
+
+        <div id="game-won" class="game-over-win">
+
+            <span>you win</span>
+            <i class="fas fa-glass-cheers"></i>
+
+        </div>
+
+        <!-- audio for the hit and the break sound -->
+
+        <audio id="hit-sound" src="./sounds/hit.mp3" type="audio/mp3"></audio>
+        <audio id="break-sound" src="./sounds/break.mp3" type="audio/mp3"></audio>
+                
+        <script type="text/javascript" src="./script.js"></script>
+        <!-- above is the link to the external js file -->
+
+    </body>
+</html>

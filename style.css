@@ -1,0 +1,260 @@
+/* body */
+
+body{
+            
+    position: relative;
+    margin: 10px;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 4px inset grey;
+    font-family: sans-serif;
+    box-shadow: 0 0 10px 10px lightgray;
+    background-image: linear-gradient(to bottom, rgb(191, 225, 236), rgb(185, 233, 185));
+    min-height: 550px;
+    min-width: 580px;    
+
+}
+
+/* start button */
+
+#start{
+    
+    width: 15vw;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: whitesmoke;
+    background-color: darkslategrey;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 20px;    
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 65px;
+    box-shadow: 0 0 4px 4px rgb(160, 159, 159);
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+}
+
+/* heading */
+
+#heading{
+
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 5px 10px;
+    background-color: rgb(124, 186, 245);
+    border-radius: 20px;        
+
+}
+
+/* volume container */
+
+#volume{
+
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(238, 1, 1);
+    box-shadow: 0 0 4px 4px #ffa7a7;
+    border-radius: 50%;    
+
+}
+
+/* icons inside volume container */
+
+#volume i{
+
+    color: whitesmoke;
+    position: absolute;
+    transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+}
+
+/* unmute */
+
+#unmute{
+    opacity: 0;        
+}
+
+/* main content */
+
+#main{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+
+}
+
+/* adjusting the start button, heading and the volume container with the screen size */
+
+@media only screen and (max-width: 675px){
+
+    body #main{  
+        width: 100%;
+    }
+
+    body #start{
+
+        top: 5px;        
+        left: 5px;
+
+    }
+
+    body #volume{
+
+        top: 5px;
+        right: 5px;    
+
+    }
+
+}
+
+/* games won styling */
+
+.main-games-won{
+
+    width: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    word-break: break-all;
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: rgb(251, 255, 0);
+    text-shadow: 0 0 6px rgb(236, 40, 40);
+
+}
+
+/* game canvas */
+
+#game-canvas{
+    
+    opacity: 0.5;
+    width: 450;
+    height: 300;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(217, 250, 243); 
+    border: 4px outset darkslategrey;    
+    transition: opacity 1s ease-in-out;
+
+}
+
+/* rules and instructions container */
+
+#rules-and-instructions-container{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+/* rules and instructions heading */
+
+#rules-and-instructions-heading{
+    
+    font-weight: bold;
+    color: white;
+    padding: 5px;        
+    background-color: #77da74;
+    border-radius: 20px;   
+
+}
+
+/* rules and instructions content */
+
+#rules-and-instructions-content{
+
+    color: darkslategrey;
+    margin: 0;        
+    padding-left: 24px;
+
+}
+
+/* list items of the rules and instructions list */
+
+#rules-and-instructions-content li{
+
+    text-align: center;
+    list-style: square;    
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;           
+    background-color: lightblue;
+
+}
+
+/* audio */
+
+audio{
+    display: none;
+}
+
+/* game over and win styling */
+
+.game-over-win{
+
+    opacity: 0;
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: bold;
+
+}
+
+/* game over message to show when the game is over */
+
+#game-over{
+    color: rgb(255, 93, 93);   
+}
+
+/* game won message to show when the user wins the game */
+
+#game-won{
+    color: rgb(89, 190, 89);
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar{
+
+    height: 10px;
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track{
+    background-color: lightgray;
+}
+
+::-webkit-scrollbar-thumb{
+    
+    background-color: grey;
+    border-radius: 20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: darkslategrey;
+}
