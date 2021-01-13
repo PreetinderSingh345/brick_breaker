@@ -81,6 +81,10 @@ let hitSound=document.getElementById("hit-sound");//getting the hit sound elemen
 
 let breakSound=document.getElementById("break-sound");//getting the break sound element
 
+let overSound=document.getElementById("over-sound");//getting the over sound element
+
+let winSound=document.getElementById("win-sound");//getting the win sound element
+
 let volume=document.getElementById("volume");//getting the volume container
 
 let mute=document.getElementById("mute");//getting the mute element
@@ -233,7 +237,14 @@ function collisionDetection(){//function to detect collision and handle it
                     score++;//increasing the player's score
 
                     if(score==(brickRowCount*brickColCount)){//if the player has broken all the bricks, then we update the gamesWon value in the local storage
-                                              
+                        
+                        if(volumeOn){
+
+                            winSound.load();//loading and playing the win sound in case of a win if the volume is on 
+                            winSound.play();
+
+                        }
+
                         localStorage.setItem("gamesWon", parseInt(localStorage.getItem("gamesWon"))+1);
 
                         start.style.opacity="0";//setting the opacity of all the elements to 0, except the game won message, so that only it is displayed
@@ -311,6 +322,13 @@ function draw(){//function to paint the canvas at each frame which is requested 
                 if(!lives){//if the lives have reduced to 0     
                     
                     if(!won){//checking if the player has not won, because this piece of code can execute even after the player has won, in the case when the player won with 1 life remaining and then the ball may not hit the paddle as we stop playing the game and we can get the game over message displayed too which should not be the case
+
+                        if(volumeOn){
+
+                            overSound.load();//loading and playing the over sound in case of game over if the volume is on
+                            overSound.play();
+
+                        }
 
                         start.style.opacity="0";//setting the opacity of all the elements to 0, except the game over message, so that only this message is displayed
                         heading.style.opacity="0";
